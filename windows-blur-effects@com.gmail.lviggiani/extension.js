@@ -158,12 +158,12 @@ function updateWindows(app){
 		flag = flag && (window.window_type!=Meta.WindowType.DESKTOP);
 		
 		// Fix issue #11: Prevent vertically maximized windows from being blurred
-		flag = flag && (window.get_maximized()!=Meta.MaximizeFlags.VERTICAL);
+		//flag = flag && (window.get_maximized()!=Meta.MaximizeFlags.VERTICAL);
 		
 		// Skip always-above windows
-        flag = flag && (window.above!=true);
+		flag = flag && (window.above!=true);
 
-        // Do not blur windows of the same App
+		// Do not blur windows of the same App
 		if (display.focus_window && window.find_root_ancestor()==display.focus_window.find_root_ancestor())
 			flag = false;
 		
